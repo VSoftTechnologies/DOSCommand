@@ -1,11 +1,12 @@
 {
  "metadata": {
   "id": "VSoft.DOSCommand",
-  "version": "2023.8.1",
+  "version": "2023.8.2",
   "description": "Execute and capture output of console applications",
   "authors": "See code",
   "projectUrl": "https://github.com/VSoftTechnologies/DOSCommand",
   "repositoryUrl": "https://github.com/VSoftTechnologies/DOSCommand",
+  "repositoryCommit": "#HASH#",
   "license": "MPL-1.1",
   "copyright": "various contributors",
   "tags": "process doscommand",
@@ -13,19 +14,11 @@
  },
  "targetPlatforms": [
   {
-   "compiler": "12.0",
+   "compiler": "10.3",
    "platforms": "Win32, Win64",
    "template": "default",
    "variables": {
-    "packageSource": "11AndAbove"
-   }
-  },
-  {
-   "compiler": "11.0",
-   "platforms": "Win32, Win64",
-   "template": "default",
-   "variables": {
-    "packageSource": "11AndAbove"
+    "packageSource": "$compilerCodeName$"
    }
   },
   {
@@ -37,11 +30,19 @@
    }
   },
   {
-   "compiler": "10.3",
+   "compiler": "11.0",
    "platforms": "Win32, Win64",
    "template": "default",
    "variables": {
-    "packageSource": "$compilerCodeName$"
+    "packageSource": "11AndAbove"
+   }
+  },
+  {
+   "compiler": "12.0",
+   "platforms": "Win32, Win64",
+   "template": "default",
+   "variables": {
+    "packageSource": "11AndAbove"
    }
   },
   {
