@@ -1,0 +1,43 @@
+# DPM package spec file
+# Used to build packages
+
+min client version: 1.0
+# metadata describes the package to the user
+metadata:
+  id: VSoft.DOSCommand
+  version: 1.1.3
+  authors: [ See code ]
+  description: Execute and capture output of console applications
+  projectUrl: https://github.com/VSoftTechnologies/DOSCommand
+  repositoryUrl: https://github.com/VSoftTechnologies/DOSCommand
+  license: MPL-1.1
+  readme: README.md
+  copyright: Various contributors
+  tags: [ process, doscommand ]
+  repositoryCommit: #HASH#
+
+variables:
+  packageSource: $CompilerCodeName$
+
+targetPlatforms:
+  - compiler from: delphi10.1
+    compiler to: delphi10.4
+    platforms: [ win32, win64 ]
+  - compiler from: delphi11
+    compiler to: delphi13
+    platforms: [ win32, win64 ]
+    variables:
+      packageSource: 11AndAbove
+
+templates:
+  - name: default
+
+    source:
+      - src: ./license.txt
+      - src: ./source/*.pas
+      - src: ./Packages/$packageSource$/**.dpk
+      - src: ./Packages/$packageSource$/**.dproj
+    build:
+      - project: ./Packages/$packageSource$/Delphi/DOSCommandDR.dproj
+    design:
+      - project: ./Packages/$packageSource$/Delphi/DOSCommandDD.dproj

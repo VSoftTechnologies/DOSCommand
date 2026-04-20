@@ -20,3 +20,5 @@
 *.res binary
 
 *.dspec filter=insert-hash
+*.dspec.yaml filter=insert-hash
+
